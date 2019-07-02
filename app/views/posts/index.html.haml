@@ -1,0 +1,16 @@
+%h1 Timeline
+%hr
+.list-group
+  = render_posts
+.row
+  .col-xs-12
+    = will_paginate @posts, renderer: BootstrapPagination::Rails
+.row
+  .col-xs-12
+    -if policy(Post).create?
+      = link_to "New Post", new_post_path, class: 'btn btn-primary'
+    - else
+      = link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary'
+      or
+      = link_to 'Sign in', new_user_session_path, class: 'btn btn-primary'
+      to create a post

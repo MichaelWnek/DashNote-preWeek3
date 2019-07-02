@@ -1,0 +1,7 @@
+%h1 Edit Post
+.row
+  .col-xs-12
+    = render partial: 'form', locals: { post: @post }
+.row#post-nav
+  .col-xs-12
+    = link_to "All Posts", posts_path, class: 'btn btn-default'

@@ -1,0 +1,28 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+@import 'comments';
+@import 'devise';
+
+
+body {
+  margin-top: 70px;
+  margin-bottom: 40px;
+}
+
+.navbar-default {
+  background-color: paleturquoise;
+  border-color:pink;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: black;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: black;
+  background-color: peachpuff;
+}

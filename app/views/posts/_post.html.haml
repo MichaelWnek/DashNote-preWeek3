@@ -1,0 +1,4 @@
+%a.list-group-item{type: 'button', href: post_path(post), id: "post-#{post.id}"}
+  %h4.list-group-item-heading= markdown_to_html post.title
+  %h5.list-group-item-heading= post.author.full_name
+  %em= "posted #{time_ago_in_words(post.created_at)} ago"

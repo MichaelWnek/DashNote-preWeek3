@@ -1,0 +1,8 @@
+%div{id: "comment-#{comment.id}"}
+  - if policy(comment).destroy?
+    = link_to post_comment_path(comment.post, comment), title: 'Delete comment', class: 'pull-right', method: :delete, remote: true do
+      %span{class: 'glyphicon glyphicon-remove'}
+  %p= "#{comment.author.full_name} wrote:"
+  %p#comment-body= comment.body
+  %em= "#{time_ago_in_words(comment.created_at)} ago"
+  %hr

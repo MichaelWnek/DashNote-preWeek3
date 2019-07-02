@@ -1,0 +1,7 @@
+- if @comment.destroyed?
+  $('#comment-' +#{@comment.id}).fadeOut(function(){
+  $('#comment-' +#{@comment.id}).remove();
+  });
+- else
+  $('#comment-' +#{@comment.id}).prepend("<div class='flash alert alert-danger'>There was an error deleting the task.</div>"}")
+  clearFlashes();

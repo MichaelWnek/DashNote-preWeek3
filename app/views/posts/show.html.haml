@@ -1,0 +1,24 @@
+%h2= markdown_to_html @post.title
+%h4= @post.author.full_name
+%em= time_tag @post.created_at
+%hr
+%section
+  %p= markdown_to_html @post.body
+%hr
+.row#post-nav
+  .col-xs-12
+    - if policy(@post).edit?
+      = link_to 'Edit Post', edit_post_path(@post), class: 'btn btn-sm btn-primary'
+    - if policy(@post).destroy?
+      = link_to 'Delete Post', post_path(@post), class: 'btn btn-sm btn-danger', method: :delete
+    = link_to 'All Posts', posts_path, class: 'btn btn-sm btn-default'
+.row
+  .col-xs-12
+    %h3 Comments
+    %hr
+    %section#comments
+      = render @comments
+- if current_user.present?
+  .row
+    .col-xs-12.col-sm-8
+      = render partial: 'comments/form'
